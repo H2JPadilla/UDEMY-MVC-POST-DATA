@@ -22,7 +22,7 @@
 
   <div class="form-group">
     <label>Post Content</label>
-    @Html.TextBoxFor(x => x.PostContent, new { @class = "ckeditor" })
+    @Html.TextAreaFor(x => x.PostContent, new { @class = "ckeditor" })
     @Html.ValidationMessageFor(x => x.PostContent)
   </div>
 

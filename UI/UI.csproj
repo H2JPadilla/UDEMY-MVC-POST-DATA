@@ -572,36 +572,6 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\MessageForm.cshtml" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\CHANGES.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\LICENSE.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\CHANGELOG.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\LICENSE.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\README.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\configfilename.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\emptyeditor.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\integration.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\integrations\easyimage.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\notifications.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\notificationsasync.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\paperformat.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\readonly.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\stylesheets.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\tokenfetching.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\tokentwoeditorscorrect.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\tokentwoeditorswrong.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\tokenwithouturl.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\wrongendpoint.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\scayt\CHANGELOG.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\scayt\LICENSE.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\scayt\README.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\README.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\font\config.json" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\SECURITY.md" />
-    <Content Include="Areas\Admin\Content\JS\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Content\webfonts\fa-brands-400.eot" />
     <Content Include="Areas\Admin\Content\webfonts\fa-brands-400.ttf" />
     <Content Include="Areas\Admin\Content\webfonts\fa-brands-400.woff" />
@@ -650,6 +620,37 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Post\AddPost.cshtml" />
     <Content Include="Areas\Admin\Views\Post\Partial\PostForm.cshtml" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\bender-runner.config.json" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\CHANGES.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\LICENSE.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\CHANGELOG.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\LICENSE.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\README.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\configfilename.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\emptyeditor.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\integration.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\integrations\easyimage.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\notifications.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\notificationsasync.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\paperformat.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\readonly.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\stylesheets.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\tokenfetching.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\tokentwoeditorscorrect.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\tokentwoeditorswrong.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\tokenwithouturl.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\exportpdf\tests\manual\wrongendpoint.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\scayt\CHANGELOG.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\README.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\SECURITY.md" />
+    <Content Include="Areas\Admin\Content\JS\ckeditor\skins\moono-lisa\readme.md" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -673,6 +674,9 @@
       <Project>{be885168-deea-492d-90fd-a06f7037d1c9}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
