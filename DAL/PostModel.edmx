@@ -1,0 +1,1405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="POSTDATAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TBL_ADDRESS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone2" Type="nvarchar(max)" />
+          <Property Name="Fax" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MapPathLarge" Type="nvarchar(max)" />
+          <Property Name="MapPathSmall" Type="nvarchar(max)" />
+          <Property Name="addDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_ADS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
+          <Property Name="Link" Type="nvarchar(max)" />
+          <Property Name="Size" Type="nvarchar(max)" />
+          <Property Name="AddDate" Type="datetime2" Precision="7" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateUserID" Type="int" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="TBL_CATEGORY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AddDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_COMMENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PostID" Type="int" Nullable="false" />
+          <Property Name="NameSurname" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CommentContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="isApproved" Type="bit" Nullable="false" />
+          <Property Name="ApproveUserID" Type="int" />
+          <Property Name="ApproveDate" Type="datetime2" Precision="7" />
+          <Property Name="AddDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_CONTACT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSurname" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Subject" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="isRead" Type="bit" Nullable="false" />
+          <Property Name="ReadUserID" Type="int" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="int" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" />
+          <Property Name="AddDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_FAV_LOGO_TITLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Fav" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Logo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AddDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_LOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="IPAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProcessID" Type="int" Nullable="false" />
+          <Property Name="ProcessType" Type="int" Nullable="false" />
+          <Property Name="ProcessCategoryType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProcessDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_META">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MetaContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AddDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_POST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ShortContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PostContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="ViewCount" Type="int" Nullable="false" />
+          <Property Name="SeoLink" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Slider" Type="bit" Nullable="false" />
+          <Property Name="Area1" Type="bit" Nullable="false" />
+          <Property Name="Area2" Type="bit" Nullable="false" />
+          <Property Name="Area3" Type="bit" Nullable="false" />
+          <Property Name="Notification" Type="bit" Nullable="false" />
+          <Property Name="LanguageName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AddDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="AddUserID" Type="int" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_POST_IMAGE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PostID" Type="int" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AddDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_POST_TAG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PostID" Type="int" Nullable="false" />
+          <Property Name="TagContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AddDate" Type="datetime" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_PROCESS_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProcessName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_SOCIAL_MEDIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Link" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AddDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="TBL_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="NameSurname" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="isAdmin" Type="bit" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="AddDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_VIDEO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VideoPath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OriginalVideoPath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AddDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="AddUserID" Type="int" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedDate" Type="datetime2" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_TBL_ADDRESS_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_ADDRESS" Type="Self.TBL_ADDRESS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_ADDRESS">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ADS_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="0..1" />
+          <End Role="TBL_ADS" Type="Self.TBL_ADS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_ADS">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CATEGORY_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_CATEGORY" Type="Self.TBL_CATEGORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CATEGORY">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_COMMENT_TBL_POST">
+          <End Role="TBL_POST" Type="Self.TBL_POST" Multiplicity="1" />
+          <End Role="TBL_COMMENT" Type="Self.TBL_COMMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_POST">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_COMMENT">
+              <PropertyRef Name="PostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_COMMENT_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_COMMENT" Type="Self.TBL_COMMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_COMMENT">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CONTACT_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="0..1" />
+          <End Role="TBL_CONTACT" Type="Self.TBL_CONTACT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CONTACT">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_FAV_LOGO_TITLE_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_FAV_LOGO_TITLE" Type="Self.TBL_FAV_LOGO_TITLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_FAV_LOGO_TITLE">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_LOG_TBL_PROCESS_TYPE">
+          <End Role="TBL_PROCESS_TYPE" Type="Self.TBL_PROCESS_TYPE" Multiplicity="1" />
+          <End Role="TBL_LOG" Type="Self.TBL_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PROCESS_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_LOG">
+              <PropertyRef Name="ProcessType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_LOG_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_LOG" Type="Self.TBL_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_LOG">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_META_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_META" Type="Self.TBL_META" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_META">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_IMAGE_TBL_POST">
+          <End Role="TBL_POST" Type="Self.TBL_POST" Multiplicity="1" />
+          <End Role="TBL_POST_IMAGE" Type="Self.TBL_POST_IMAGE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_POST">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST_IMAGE">
+              <PropertyRef Name="PostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_IMAGE_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_POST_IMAGE" Type="Self.TBL_POST_IMAGE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST_IMAGE">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_TAG_TBL_POST">
+          <End Role="TBL_POST" Type="Self.TBL_POST" Multiplicity="1" />
+          <End Role="TBL_POST_TAG" Type="Self.TBL_POST_TAG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_POST">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST_TAG">
+              <PropertyRef Name="PostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_TAG_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_POST_TAG" Type="Self.TBL_POST_TAG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST_TAG">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_TBL_CATEGORY">
+          <End Role="TBL_CATEGORY" Type="Self.TBL_CATEGORY" Multiplicity="1" />
+          <End Role="TBL_POST" Type="Self.TBL_POST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CATEGORY">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_POST" Type="Self.TBL_POST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SOCIAL_MEDIA_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_SOCIAL_MEDIA" Type="Self.TBL_SOCIAL_MEDIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_SOCIAL_MEDIA">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_VIDEO_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_VIDEO" Type="Self.TBL_VIDEO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_VIDEO">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="POSTDATAModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ADDRESS" EntityType="Self.TBL_ADDRESS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ADS" EntityType="Self.TBL_ADS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CATEGORY" EntityType="Self.TBL_CATEGORY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_COMMENT" EntityType="Self.TBL_COMMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CONTACT" EntityType="Self.TBL_CONTACT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_FAV_LOGO_TITLE" EntityType="Self.TBL_FAV_LOGO_TITLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_LOG" EntityType="Self.TBL_LOG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_META" EntityType="Self.TBL_META" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_POST" EntityType="Self.TBL_POST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_POST_IMAGE" EntityType="Self.TBL_POST_IMAGE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_POST_TAG" EntityType="Self.TBL_POST_TAG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_PROCESS_TYPE" EntityType="Self.TBL_PROCESS_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_SOCIAL_MEDIA" EntityType="Self.TBL_SOCIAL_MEDIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_USER" EntityType="Self.TBL_USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_VIDEO" EntityType="Self.TBL_VIDEO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TBL_ADDRESS_TBL_USER" Association="Self.FK_TBL_ADDRESS_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_ADDRESS" EntitySet="TBL_ADDRESS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ADS_TBL_USER" Association="Self.FK_TBL_ADS_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_ADS" EntitySet="TBL_ADS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CATEGORY_TBL_USER" Association="Self.FK_TBL_CATEGORY_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_CATEGORY" EntitySet="TBL_CATEGORY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_COMMENT_TBL_POST" Association="Self.FK_TBL_COMMENT_TBL_POST">
+            <End Role="TBL_POST" EntitySet="TBL_POST" />
+            <End Role="TBL_COMMENT" EntitySet="TBL_COMMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_COMMENT_TBL_USER" Association="Self.FK_TBL_COMMENT_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_COMMENT" EntitySet="TBL_COMMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CONTACT_TBL_USER" Association="Self.FK_TBL_CONTACT_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_CONTACT" EntitySet="TBL_CONTACT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_FAV_LOGO_TITLE_TBL_USER" Association="Self.FK_TBL_FAV_LOGO_TITLE_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_FAV_LOGO_TITLE" EntitySet="TBL_FAV_LOGO_TITLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_LOG_TBL_PROCESS_TYPE" Association="Self.FK_TBL_LOG_TBL_PROCESS_TYPE">
+            <End Role="TBL_PROCESS_TYPE" EntitySet="TBL_PROCESS_TYPE" />
+            <End Role="TBL_LOG" EntitySet="TBL_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_LOG_TBL_USER" Association="Self.FK_TBL_LOG_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_LOG" EntitySet="TBL_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_META_TBL_USER" Association="Self.FK_TBL_META_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_META" EntitySet="TBL_META" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_IMAGE_TBL_POST" Association="Self.FK_TBL_POST_IMAGE_TBL_POST">
+            <End Role="TBL_POST" EntitySet="TBL_POST" />
+            <End Role="TBL_POST_IMAGE" EntitySet="TBL_POST_IMAGE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_IMAGE_TBL_USER" Association="Self.FK_TBL_POST_IMAGE_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_POST_IMAGE" EntitySet="TBL_POST_IMAGE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_TAG_TBL_POST" Association="Self.FK_TBL_POST_TAG_TBL_POST">
+            <End Role="TBL_POST" EntitySet="TBL_POST" />
+            <End Role="TBL_POST_TAG" EntitySet="TBL_POST_TAG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_TAG_TBL_USER" Association="Self.FK_TBL_POST_TAG_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_POST_TAG" EntitySet="TBL_POST_TAG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_TBL_CATEGORY" Association="Self.FK_TBL_POST_TBL_CATEGORY">
+            <End Role="TBL_CATEGORY" EntitySet="TBL_CATEGORY" />
+            <End Role="TBL_POST" EntitySet="TBL_POST" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_TBL_USER" Association="Self.FK_TBL_POST_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_POST" EntitySet="TBL_POST" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SOCIAL_MEDIA_TBL_USER" Association="Self.FK_TBL_SOCIAL_MEDIA_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_SOCIAL_MEDIA" EntitySet="TBL_SOCIAL_MEDIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_VIDEO_TBL_USER" Association="Self.FK_TBL_VIDEO_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_VIDEO" EntitySet="TBL_VIDEO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="POSTDATAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TBL_ADDRESS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MapPathLarge" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MapPathSmall" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_ADDRESS_TBL_USER" FromRole="TBL_ADDRESS" ToRole="TBL_USER" />
+        </EntityType>
+        <EntityType Name="TBL_ADS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddDate" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="DeletedDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_ADS_TBL_USER" FromRole="TBL_ADS" ToRole="TBL_USER" />
+        </EntityType>
+        <EntityType Name="TBL_CATEGORY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_CATEGORY_TBL_USER" FromRole="TBL_CATEGORY" ToRole="TBL_USER" />
+          <NavigationProperty Name="TBL_POST" Relationship="Self.FK_TBL_POST_TBL_CATEGORY" FromRole="TBL_CATEGORY" ToRole="TBL_POST" />
+        </EntityType>
+        <EntityType Name="TBL_COMMENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PostID" Type="Int32" Nullable="false" />
+          <Property Name="NameSurname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CommentContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isApproved" Type="Boolean" Nullable="false" />
+          <Property Name="ApproveUserID" Type="Int32" />
+          <Property Name="ApproveDate" Type="DateTime" Precision="7" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_POST" Relationship="Self.FK_TBL_COMMENT_TBL_POST" FromRole="TBL_COMMENT" ToRole="TBL_POST" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_COMMENT_TBL_USER" FromRole="TBL_COMMENT" ToRole="TBL_USER" />
+        </EntityType>
+        <EntityType Name="TBL_CONTACT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSurname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isRead" Type="Boolean" Nullable="false" />
+          <Property Name="ReadUserID" Type="Int32" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="7" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_CONTACT_TBL_USER" FromRole="TBL_CONTACT" ToRole="TBL_USER" />
+        </EntityType>
+        <EntityType Name="TBL_FAV_LOGO_TITLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fav" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_FAV_LOGO_TITLE_TBL_USER" FromRole="TBL_FAV_LOGO_TITLE" ToRole="TBL_USER" />
+        </EntityType>
+        <EntityType Name="TBL_LOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProcessID" Type="Int32" Nullable="false" />
+          <Property Name="ProcessType" Type="Int32" Nullable="false" />
+          <Property Name="ProcessCategoryType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProcessDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_PROCESS_TYPE" Relationship="Self.FK_TBL_LOG_TBL_PROCESS_TYPE" FromRole="TBL_LOG" ToRole="TBL_PROCESS_TYPE" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_LOG_TBL_USER" FromRole="TBL_LOG" ToRole="TBL_USER" />
+        </EntityType>
+        <EntityType Name="TBL_META">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MetaContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_META_TBL_USER" FromRole="TBL_META" ToRole="TBL_USER" />
+        </EntityType>
+        <EntityType Name="TBL_POST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ShortContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PostContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="ViewCount" Type="Int32" Nullable="false" />
+          <Property Name="SeoLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Slider" Type="Boolean" Nullable="false" />
+          <Property Name="Area1" Type="Boolean" Nullable="false" />
+          <Property Name="Area2" Type="Boolean" Nullable="false" />
+          <Property Name="Area3" Type="Boolean" Nullable="false" />
+          <Property Name="Notification" Type="Boolean" Nullable="false" />
+          <Property Name="LanguageName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="AddUserID" Type="Int32" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_CATEGORY" Relationship="Self.FK_TBL_POST_TBL_CATEGORY" FromRole="TBL_POST" ToRole="TBL_CATEGORY" />
+          <NavigationProperty Name="TBL_COMMENT" Relationship="Self.FK_TBL_COMMENT_TBL_POST" FromRole="TBL_POST" ToRole="TBL_COMMENT" />
+          <NavigationProperty Name="TBL_POST_IMAGE" Relationship="Self.FK_TBL_POST_IMAGE_TBL_POST" FromRole="TBL_POST" ToRole="TBL_POST_IMAGE" />
+          <NavigationProperty Name="TBL_POST_TAG" Relationship="Self.FK_TBL_POST_TAG_TBL_POST" FromRole="TBL_POST" ToRole="TBL_POST_TAG" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_POST_TBL_USER" FromRole="TBL_POST" ToRole="TBL_USER" />
+        </EntityType>
+        <EntityType Name="TBL_POST_IMAGE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PostID" Type="Int32" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_POST" Relationship="Self.FK_TBL_POST_IMAGE_TBL_POST" FromRole="TBL_POST_IMAGE" ToRole="TBL_POST" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_POST_IMAGE_TBL_USER" FromRole="TBL_POST_IMAGE" ToRole="TBL_USER" />
+        </EntityType>
+        <EntityType Name="TBL_POST_TAG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PostID" Type="Int32" Nullable="false" />
+          <Property Name="TagContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_POST" Relationship="Self.FK_TBL_POST_TAG_TBL_POST" FromRole="TBL_POST_TAG" ToRole="TBL_POST" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_POST_TAG_TBL_USER" FromRole="TBL_POST_TAG" ToRole="TBL_USER" />
+        </EntityType>
+        <EntityType Name="TBL_PROCESS_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProcessName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TBL_LOG" Relationship="Self.FK_TBL_LOG_TBL_PROCESS_TYPE" FromRole="TBL_PROCESS_TYPE" ToRole="TBL_LOG" />
+        </EntityType>
+        <EntityType Name="TBL_SOCIAL_MEDIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_SOCIAL_MEDIA_TBL_USER" FromRole="TBL_SOCIAL_MEDIA" ToRole="TBL_USER" />
+        </EntityType>
+        <EntityType Name="TBL_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NameSurname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_ADDRESS" Relationship="Self.FK_TBL_ADDRESS_TBL_USER" FromRole="TBL_USER" ToRole="TBL_ADDRESS" />
+          <NavigationProperty Name="TBL_ADS" Relationship="Self.FK_TBL_ADS_TBL_USER" FromRole="TBL_USER" ToRole="TBL_ADS" />
+          <NavigationProperty Name="TBL_CATEGORY" Relationship="Self.FK_TBL_CATEGORY_TBL_USER" FromRole="TBL_USER" ToRole="TBL_CATEGORY" />
+          <NavigationProperty Name="TBL_COMMENT" Relationship="Self.FK_TBL_COMMENT_TBL_USER" FromRole="TBL_USER" ToRole="TBL_COMMENT" />
+          <NavigationProperty Name="TBL_CONTACT" Relationship="Self.FK_TBL_CONTACT_TBL_USER" FromRole="TBL_USER" ToRole="TBL_CONTACT" />
+          <NavigationProperty Name="TBL_FAV_LOGO_TITLE" Relationship="Self.FK_TBL_FAV_LOGO_TITLE_TBL_USER" FromRole="TBL_USER" ToRole="TBL_FAV_LOGO_TITLE" />
+          <NavigationProperty Name="TBL_LOG" Relationship="Self.FK_TBL_LOG_TBL_USER" FromRole="TBL_USER" ToRole="TBL_LOG" />
+          <NavigationProperty Name="TBL_META" Relationship="Self.FK_TBL_META_TBL_USER" FromRole="TBL_USER" ToRole="TBL_META" />
+          <NavigationProperty Name="TBL_POST" Relationship="Self.FK_TBL_POST_TBL_USER" FromRole="TBL_USER" ToRole="TBL_POST" />
+          <NavigationProperty Name="TBL_POST_IMAGE" Relationship="Self.FK_TBL_POST_IMAGE_TBL_USER" FromRole="TBL_USER" ToRole="TBL_POST_IMAGE" />
+          <NavigationProperty Name="TBL_POST_TAG" Relationship="Self.FK_TBL_POST_TAG_TBL_USER" FromRole="TBL_USER" ToRole="TBL_POST_TAG" />
+          <NavigationProperty Name="TBL_SOCIAL_MEDIA" Relationship="Self.FK_TBL_SOCIAL_MEDIA_TBL_USER" FromRole="TBL_USER" ToRole="TBL_SOCIAL_MEDIA" />
+          <NavigationProperty Name="TBL_VIDEO" Relationship="Self.FK_TBL_VIDEO_TBL_USER" FromRole="TBL_USER" ToRole="TBL_VIDEO" />
+        </EntityType>
+        <EntityType Name="TBL_VIDEO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VideoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OriginalVideoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="AddUserID" Type="Int32" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TBL_USER" Relationship="Self.FK_TBL_VIDEO_TBL_USER" FromRole="TBL_VIDEO" ToRole="TBL_USER" />
+        </EntityType>
+        <Association Name="FK_TBL_ADDRESS_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_ADDRESS" Type="Self.TBL_ADDRESS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_ADDRESS">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ADS_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="0..1" />
+          <End Role="TBL_ADS" Type="Self.TBL_ADS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_ADS">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CATEGORY_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_CATEGORY" Type="Self.TBL_CATEGORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CATEGORY">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_TBL_CATEGORY">
+          <End Role="TBL_CATEGORY" Type="Self.TBL_CATEGORY" Multiplicity="1" />
+          <End Role="TBL_POST" Type="Self.TBL_POST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_CATEGORY">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_COMMENT_TBL_POST">
+          <End Role="TBL_POST" Type="Self.TBL_POST" Multiplicity="1" />
+          <End Role="TBL_COMMENT" Type="Self.TBL_COMMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_POST">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_COMMENT">
+              <PropertyRef Name="PostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_COMMENT_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_COMMENT" Type="Self.TBL_COMMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_COMMENT">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_CONTACT_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="0..1" />
+          <End Role="TBL_CONTACT" Type="Self.TBL_CONTACT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_CONTACT">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_FAV_LOGO_TITLE_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_FAV_LOGO_TITLE" Type="Self.TBL_FAV_LOGO_TITLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_FAV_LOGO_TITLE">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_LOG_TBL_PROCESS_TYPE">
+          <End Role="TBL_PROCESS_TYPE" Type="Self.TBL_PROCESS_TYPE" Multiplicity="1" />
+          <End Role="TBL_LOG" Type="Self.TBL_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_PROCESS_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_LOG">
+              <PropertyRef Name="ProcessType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_LOG_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_LOG" Type="Self.TBL_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_LOG">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_META_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_META" Type="Self.TBL_META" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_META">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_IMAGE_TBL_POST">
+          <End Role="TBL_POST" Type="Self.TBL_POST" Multiplicity="1" />
+          <End Role="TBL_POST_IMAGE" Type="Self.TBL_POST_IMAGE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_POST">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST_IMAGE">
+              <PropertyRef Name="PostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_TAG_TBL_POST">
+          <End Role="TBL_POST" Type="Self.TBL_POST" Multiplicity="1" />
+          <End Role="TBL_POST_TAG" Type="Self.TBL_POST_TAG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_POST">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST_TAG">
+              <PropertyRef Name="PostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_POST" Type="Self.TBL_POST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_IMAGE_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_POST_IMAGE" Type="Self.TBL_POST_IMAGE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST_IMAGE">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_POST_TAG_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_POST_TAG" Type="Self.TBL_POST_TAG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_POST_TAG">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SOCIAL_MEDIA_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_SOCIAL_MEDIA" Type="Self.TBL_SOCIAL_MEDIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_SOCIAL_MEDIA">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_VIDEO_TBL_USER">
+          <End Role="TBL_USER" Type="Self.TBL_USER" Multiplicity="1" />
+          <End Role="TBL_VIDEO" Type="Self.TBL_VIDEO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBL_VIDEO">
+              <PropertyRef Name="LastUpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="POSTDATAEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TBL_ADDRESS" EntityType="Self.TBL_ADDRESS" />
+          <EntitySet Name="TBL_ADS" EntityType="Self.TBL_ADS" />
+          <EntitySet Name="TBL_CATEGORY" EntityType="Self.TBL_CATEGORY" />
+          <EntitySet Name="TBL_COMMENT" EntityType="Self.TBL_COMMENT" />
+          <EntitySet Name="TBL_CONTACT" EntityType="Self.TBL_CONTACT" />
+          <EntitySet Name="TBL_FAV_LOGO_TITLE" EntityType="Self.TBL_FAV_LOGO_TITLE" />
+          <EntitySet Name="TBL_LOG" EntityType="Self.TBL_LOG" />
+          <EntitySet Name="TBL_META" EntityType="Self.TBL_META" />
+          <EntitySet Name="TBL_POST" EntityType="Self.TBL_POST" />
+          <EntitySet Name="TBL_POST_IMAGE" EntityType="Self.TBL_POST_IMAGE" />
+          <EntitySet Name="TBL_POST_TAG" EntityType="Self.TBL_POST_TAG" />
+          <EntitySet Name="TBL_PROCESS_TYPE" EntityType="Self.TBL_PROCESS_TYPE" />
+          <EntitySet Name="TBL_SOCIAL_MEDIA" EntityType="Self.TBL_SOCIAL_MEDIA" />
+          <EntitySet Name="TBL_USER" EntityType="Self.TBL_USER" />
+          <EntitySet Name="TBL_VIDEO" EntityType="Self.TBL_VIDEO" />
+          <AssociationSet Name="FK_TBL_ADDRESS_TBL_USER" Association="Self.FK_TBL_ADDRESS_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_ADDRESS" EntitySet="TBL_ADDRESS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ADS_TBL_USER" Association="Self.FK_TBL_ADS_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_ADS" EntitySet="TBL_ADS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CATEGORY_TBL_USER" Association="Self.FK_TBL_CATEGORY_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_CATEGORY" EntitySet="TBL_CATEGORY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_TBL_CATEGORY" Association="Self.FK_TBL_POST_TBL_CATEGORY">
+            <End Role="TBL_CATEGORY" EntitySet="TBL_CATEGORY" />
+            <End Role="TBL_POST" EntitySet="TBL_POST" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_COMMENT_TBL_POST" Association="Self.FK_TBL_COMMENT_TBL_POST">
+            <End Role="TBL_POST" EntitySet="TBL_POST" />
+            <End Role="TBL_COMMENT" EntitySet="TBL_COMMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_COMMENT_TBL_USER" Association="Self.FK_TBL_COMMENT_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_COMMENT" EntitySet="TBL_COMMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_CONTACT_TBL_USER" Association="Self.FK_TBL_CONTACT_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_CONTACT" EntitySet="TBL_CONTACT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_FAV_LOGO_TITLE_TBL_USER" Association="Self.FK_TBL_FAV_LOGO_TITLE_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_FAV_LOGO_TITLE" EntitySet="TBL_FAV_LOGO_TITLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_LOG_TBL_PROCESS_TYPE" Association="Self.FK_TBL_LOG_TBL_PROCESS_TYPE">
+            <End Role="TBL_PROCESS_TYPE" EntitySet="TBL_PROCESS_TYPE" />
+            <End Role="TBL_LOG" EntitySet="TBL_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_LOG_TBL_USER" Association="Self.FK_TBL_LOG_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_LOG" EntitySet="TBL_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_META_TBL_USER" Association="Self.FK_TBL_META_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_META" EntitySet="TBL_META" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_IMAGE_TBL_POST" Association="Self.FK_TBL_POST_IMAGE_TBL_POST">
+            <End Role="TBL_POST" EntitySet="TBL_POST" />
+            <End Role="TBL_POST_IMAGE" EntitySet="TBL_POST_IMAGE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_TAG_TBL_POST" Association="Self.FK_TBL_POST_TAG_TBL_POST">
+            <End Role="TBL_POST" EntitySet="TBL_POST" />
+            <End Role="TBL_POST_TAG" EntitySet="TBL_POST_TAG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_TBL_USER" Association="Self.FK_TBL_POST_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_POST" EntitySet="TBL_POST" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_IMAGE_TBL_USER" Association="Self.FK_TBL_POST_IMAGE_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_POST_IMAGE" EntitySet="TBL_POST_IMAGE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_POST_TAG_TBL_USER" Association="Self.FK_TBL_POST_TAG_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_POST_TAG" EntitySet="TBL_POST_TAG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SOCIAL_MEDIA_TBL_USER" Association="Self.FK_TBL_SOCIAL_MEDIA_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_SOCIAL_MEDIA" EntitySet="TBL_SOCIAL_MEDIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_VIDEO_TBL_USER" Association="Self.FK_TBL_VIDEO_TBL_USER">
+            <End Role="TBL_USER" EntitySet="TBL_USER" />
+            <End Role="TBL_VIDEO" EntitySet="TBL_VIDEO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="POSTDATAModelStoreContainer" CdmEntityContainer="POSTDATAEntities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="POSTDATAModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ADDRESS">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_ADDRESS">
+              <MappingFragment StoreEntitySet="TBL_ADDRESS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="MapPathLarge" ColumnName="MapPathLarge" />
+                <ScalarProperty Name="MapPathSmall" ColumnName="MapPathSmall" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ADS">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_ADS">
+              <MappingFragment StoreEntitySet="TBL_ADS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CATEGORY">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_CATEGORY">
+              <MappingFragment StoreEntitySet="TBL_CATEGORY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_COMMENT">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_COMMENT">
+              <MappingFragment StoreEntitySet="TBL_COMMENT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PostID" ColumnName="PostID" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CommentContent" ColumnName="CommentContent" />
+                <ScalarProperty Name="isApproved" ColumnName="isApproved" />
+                <ScalarProperty Name="ApproveUserID" ColumnName="ApproveUserID" />
+                <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CONTACT">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_CONTACT">
+              <MappingFragment StoreEntitySet="TBL_CONTACT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="isRead" ColumnName="isRead" />
+                <ScalarProperty Name="ReadUserID" ColumnName="ReadUserID" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_FAV_LOGO_TITLE">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_FAV_LOGO_TITLE">
+              <MappingFragment StoreEntitySet="TBL_FAV_LOGO_TITLE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Fav" ColumnName="Fav" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_LOG">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_LOG">
+              <MappingFragment StoreEntitySet="TBL_LOG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="ProcessID" ColumnName="ProcessID" />
+                <ScalarProperty Name="ProcessType" ColumnName="ProcessType" />
+                <ScalarProperty Name="ProcessCategoryType" ColumnName="ProcessCategoryType" />
+                <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_META">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_META">
+              <MappingFragment StoreEntitySet="TBL_META">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MetaContent" ColumnName="MetaContent" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_POST">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_POST">
+              <MappingFragment StoreEntitySet="TBL_POST">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ShortContent" ColumnName="ShortContent" />
+                <ScalarProperty Name="PostContent" ColumnName="PostContent" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="ViewCount" ColumnName="ViewCount" />
+                <ScalarProperty Name="SeoLink" ColumnName="SeoLink" />
+                <ScalarProperty Name="Slider" ColumnName="Slider" />
+                <ScalarProperty Name="Area1" ColumnName="Area1" />
+                <ScalarProperty Name="Area2" ColumnName="Area2" />
+                <ScalarProperty Name="Area3" ColumnName="Area3" />
+                <ScalarProperty Name="Notification" ColumnName="Notification" />
+                <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="AddUserID" ColumnName="AddUserID" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_POST_IMAGE">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_POST_IMAGE">
+              <MappingFragment StoreEntitySet="TBL_POST_IMAGE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PostID" ColumnName="PostID" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_POST_TAG">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_POST_TAG">
+              <MappingFragment StoreEntitySet="TBL_POST_TAG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PostID" ColumnName="PostID" />
+                <ScalarProperty Name="TagContent" ColumnName="TagContent" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PROCESS_TYPE">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_PROCESS_TYPE">
+              <MappingFragment StoreEntitySet="TBL_PROCESS_TYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProcessName" ColumnName="ProcessName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SOCIAL_MEDIA">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_SOCIAL_MEDIA">
+              <MappingFragment StoreEntitySet="TBL_SOCIAL_MEDIA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_USER">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_USER">
+              <MappingFragment StoreEntitySet="TBL_USER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_VIDEO">
+            <EntityTypeMapping TypeName="POSTDATAModel.TBL_VIDEO">
+              <MappingFragment StoreEntitySet="TBL_VIDEO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="OriginalVideoPath" ColumnName="OriginalVideoPath" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="AddUserID" ColumnName="AddUserID" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastUpdateUserID" ColumnName="LastUpdateUserID" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

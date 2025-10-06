@@ -1,0 +1,69 @@
+﻿﻿
+@{
+  ViewBag.Title = "VideoList";
+  Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+
+@model List<DTO.VideoDTO>
+<section class="content-header">
+  <h1>Video List</h1>
+  <ol class="breadcrumb float-sm-left">
+    <li class="breadcrumb-item"><a>Admin</a></li>
+    <li class="breadcrumb-item"><a>Video</a></li>
+    <li class="breadcrumb-item active"><a>Video List</a></li>
+  </ol>
+</section>
+<br />
+<div class="card-footer">
+  <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Video/AddVideo'">Add Video</button>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">DataTable with default features</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Path</th>
+          <th>Update</th>
+          <th>Delete</th>
+
+        </tr>
+      </thead>
+      <tbody>
+
+        @foreach (var item in Model)
+        {
+          <tr id="a_@item.ID">
+            <td>@item.Title</td>
+            <td>@item.OriginalVideoPath</td>
+
+
+
+            @* UPDATE *@
+            <td align="center" valign="middle">
+              <a href="/Admin/Video/UpdateVideo/@item.ID">
+                <br />
+                <img src="~/Areas/Admin/Content/icons/loading-arrow.png" style="height:40px;" />
+              </a>
+            </td>
+
+
+            <td align="center" valign="middle">
+              <a href="#">
+                <br />
+                <img src="~/Areas/Admin/Content/icons/delete.png" style="height:40px;" />
+              </a>
+            </td>
+          </tr>
+        }
+      </tbody>
+
+    </table>
+  </div>
+</div>

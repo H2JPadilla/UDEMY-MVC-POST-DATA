@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e723727c4684c3dbc939196ea2d8fe9" Name="Diagram1">
+        <EntityTypeShape EntityType="POSTDATAModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_ADDRESS" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_ADS" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_CATEGORY" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_COMMENT" Width="1.5" PointX="7.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_CONTACT" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_FAV_LOGO_TITLE" Width="1.5" PointX="3" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_LOG" Width="1.5" PointX="6" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_META" Width="1.5" PointX="3" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_POST" Width="1.5" PointX="5.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_POST_IMAGE" Width="1.5" PointX="10.5" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_POST_TAG" Width="1.5" PointX="8.5" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_PROCESS_TYPE" Width="1.5" PointX="3.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_SOCIAL_MEDIA" Width="1.5" PointX="3" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_USER" Width="1.5" PointX="0.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.TBL_VIDEO" Width="1.5" PointX="3" PointY="39.625" IsExpanded="true" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_ADDRESS_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_ADS_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_CATEGORY_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_POST_TBL_CATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_COMMENT_TBL_POST" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_COMMENT_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_CONTACT_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_FAV_LOGO_TITLE_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_LOG_TBL_PROCESS_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_LOG_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_META_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_POST_IMAGE_TBL_POST" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_POST_TAG_TBL_POST" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_POST_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_POST_IMAGE_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_POST_TAG_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_SOCIAL_MEDIA_TBL_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="POSTDATAModel.FK_TBL_VIDEO_TBL_USER" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,55 @@
+﻿
+@model DTO.AddressDTO
+<div class="box-body">
+
+  <input hidden type="number" value="@Model.ID" name="ID" />
+
+  <div class="form-group">
+    <label>Address</label>
+    @Html.TextBoxFor(x => x.AddressContent, new { @class = "form-control", placeholder = "Enter address" })
+    @Html.ValidationMessageFor(x => x.AddressContent, "", new { @class = "text-danger" })
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Enter email" })
+    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+  </div>
+
+  <div class="form-group">
+    <label>Phone 1</label>
+    @Html.TextBoxFor(x => x.Phone1, new { @class = "form-control", placeholder = "Enter phone 1" })
+    @Html.ValidationMessageFor(x => x.Phone1, "", new { @class = "text-danger" })
+  </div>
+
+  <div class="form-group">
+    <label>Phone 2</label>
+    @Html.TextBoxFor(x => x.Phone2, new { @class = "form-control", placeholder = "Enter phone 2" })
+    @Html.ValidationMessageFor(x => x.Phone2, "", new { @class = "text-danger" })
+  </div>
+
+  <div class="form-group">
+    <label>Fax</label>
+    @Html.TextBoxFor(x => x.Fax, new { @class = "form-control", placeholder = "Enter fax" })
+    @Html.ValidationMessageFor(x => x.Fax, "", new { @class = "text-danger" })
+  </div>
+
+  <div class="form-group">
+    <label>Large Map Path</label>
+    @Html.TextAreaFor(x => x.LargeMapPath, new { @class = "form-control", placeholder = "Enter large map" })
+    @Html.ValidationMessageFor(x => x.LargeMapPath, "", new { @class = "text-danger" })
+  </div>
+
+  <div class="form-group">
+    <label>Small Map Path</label>
+    @Html.TextAreaFor(x => x.SmallMapPath, new { @class = "form-control", placeholder = "Enter small map" })
+    @Html.ValidationMessageFor(x => x.SmallMapPath, "", new { @class = "text-danger" })
+  </div>
+
+
+  <div class="card-footer">
+    <button class="btn btn-primary">Save</button>
+  </div>
+
+
+</div>

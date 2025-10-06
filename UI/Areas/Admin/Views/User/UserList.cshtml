@@ -1,0 +1,68 @@
+﻿﻿
+@{
+  ViewBag.Title = "UserList";
+  Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+@model List<DTO.UserDTO>
+<section class="content-header">
+  <h1>UserList</h1>
+  <ol class="breadcrumb float-sm-left">
+    <li class="breadcrumb-item"><a>Admin</a></li>
+    <li class="breadcrumb-item"><a>User</a></li>
+    <li class="breadcrumb-item active"><a>User List</a></li>
+  </ol>
+</section>
+<br />
+<div class="card-footer">
+  <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/User/AddUser'">Add User</button>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">DataTable with default features</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>UserName</th>
+          <th>Image</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        @foreach (var item in Model)
+        {
+          <tr id="a_@item.ID">
+            <td>@item.Name</td>
+            <td>@item.Username</td>
+            <td>
+              <img src="~/Areas/Admin/Content/UserImages/@item.ImagePath" width="60" height="40" />
+            </td>
+
+            @* UPDATE *@
+            <td align="center" valign="middle">
+              <a href="/Admin/User/UpdateUser/@item.ID">
+                <br />
+                <img src="~/Areas/Admin/Content/icons/loading-arrow.png" style="height:40px;" />
+              </a>
+            </td>
+
+
+            <td align="center" valign="middle">
+              <a href="#">
+                <br />
+                <img src="~/Areas/Admin/Content/icons/delete.png" style="height:40px;" />
+              </a>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
