@@ -617,7 +617,6 @@
     <Content Include="Areas\Admin\Views\Video\UpdateVideo.cshtml" />
     <Content Include="Areas\Admin\Views\Video\VideoList.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Post\AddPost.cshtml" />
     <Content Include="Areas\Admin\Views\Post\Partial\PostForm.cshtml" />
     <Content Include="Areas\Admin\Content\JS\ckeditor\bender-runner.config.json" />
@@ -651,6 +650,8 @@
     <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Areas\Admin\Content\JS\ckeditor\SECURITY.md" />
     <Content Include="Areas\Admin\Content\JS\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="Areas\Admin\Views\Post\PostList.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\UpdatePost.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -661,6 +662,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Content\PostImages\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />

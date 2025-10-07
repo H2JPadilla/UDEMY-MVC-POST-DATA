@@ -29,7 +29,7 @@
   <div class="form-group">
     <label>Post Image</label>
     <input type="file" name="PostImage" accept="image/gif, image/jpeg,image/png, image/jpg"
-           onchange="$('#PostImage')[0].src = window.URL.createObjectURL(this.files[0])" />
+           multiple onchange="$('#PostImage')[0].src = window.URL.createObjectURL(this.files[0])" />
     <br />
     <img id="PostImage" width="300" height="200" />
   </div>
@@ -70,6 +70,40 @@
     @Html.TextBoxFor(x => x.Language, new { @class = "form-control", placeholder = "Language" })
     @Html.ValidationMessageFor(x => x.Language)
   </div>
+
+
+  @if (Model.isUpdate)
+  {
+    <!-- /.card-header -->
+    <div class="card-body">
+      <table id="example2" class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach (var item in Model.PostImages)
+          {
+            <tr id="a_@item.ID">
+              <td>
+                <img style="height:40px;" src="~/Areas/Admin/Content/PostImages/@item.ImagePath" />
+              </td>
+              <td align="center" valign="middle">
+                <a href="#">
+                  <br />
+                  <img src="~/Areas/Admin/Content/icons/delete.png" style="height:40px;" />
+                </a>
+              </td>
+            </tr>
+          }
+
+        </tbody>
+      </table>
+    </div>
+    <!-- /.card-body -->
+  }
 
   <div class="card-footer">
     <button class="btn btn-primary" type="submit">Save</button>
