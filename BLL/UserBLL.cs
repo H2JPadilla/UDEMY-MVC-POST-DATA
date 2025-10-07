@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,6 +26,13 @@ namespace BLL
       user.LastUpdateUserID = UserStatic.UserID;
       int ID = userdao.AddUser(user);
       LogDAO.AddLog(General.ProcessType.UserAdd, General.TableName.User, ID);
+    }
+
+    public string DeleteUser(int iD)
+    {
+      string imagepath = userdao.DeleteUser(iD);
+      LogDAO.AddLog(General.ProcessType.UserDelete, General.TableName.User, iD);
+      return imagepath;
     }
 
     public List<UserDTO> GetUser()

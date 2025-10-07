@@ -112,5 +112,15 @@ namespace UI.Areas.Admin.Controllers
       }
       return View(model);
     }
+
+    public JsonResult DeleteUser(int ID)
+    {
+      string imagepath = bll.DeleteUser(ID);
+      if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/UserImages/" + imagepath)))
+      {
+        System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/UserImages/" + imagepath));
+      }
+      return Json("");
+    }
   }
 }

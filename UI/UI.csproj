@@ -92,9 +92,11 @@
     <Content Include="Areas\Admin\Content\AdsImages\f0eadcac-c6c4-4bcf-a2a1-ddc48430f7352a7d4c4bc1381a476b8b8a85885ac392.jpg" />
     <Content Include="Areas\Admin\Content\CSS\adminlte.min.css" />
     <Content Include="Areas\Admin\Content\CSS\all.min.css" />
+    <Content Include="Areas\Admin\Content\CSS\bootstrap-4.min.css" />
     <Content Include="Areas\Admin\Content\CSS\dataTables.bootstrap4.min.css" />
     <Content Include="Areas\Admin\Content\CSS\icheck-bootstrap.min.css" />
     <Content Include="Areas\Admin\Content\CSS\responsive.bootstrap4.min.css" />
+    <Content Include="Areas\Admin\Content\CSS\toastr.min.css" />
     <Content Include="Areas\Admin\Content\FavImages\0e52675b-4dbe-4ea8-b9c5-c3f5ef3a33fananami.jpg" />
     <Content Include="Areas\Admin\Content\FavImages\177c15e5-03cc-405a-8c2a-d2c0c3f3480dimages.png" />
     <Content Include="Areas\Admin\Content\icons\delete.png" />
@@ -524,10 +526,13 @@
     <Content Include="Areas\Admin\Content\JS\ckeditor\vendor\promise.js" />
     <Content Include="Areas\Admin\Content\JS\dataTables.bootstrap4.min.js" />
     <Content Include="Areas\Admin\Content\JS\dataTables.responsive.min.js" />
+    <Content Include="Areas\Admin\Content\JS\DeleteRecord.js" />
     <Content Include="Areas\Admin\Content\JS\demo.js" />
     <Content Include="Areas\Admin\Content\JS\jquery.dataTables.min.js" />
     <Content Include="Areas\Admin\Content\JS\jquery.min.js" />
     <Content Include="Areas\Admin\Content\JS\responsive.bootstrap4.min.js" />
+    <Content Include="Areas\Admin\Content\JS\sweetalert2.min.js" />
+    <Content Include="Areas\Admin\Content\JS\toastr.min.js" />
     <Content Include="Areas\Admin\Content\LogoImages\b1ee3fc6-3cc1-4ae7-b877-4dfa138bdc3dnanami.jpg" />
     <Content Include="Areas\Admin\Content\LogoImages\dd0206cc-9445-4a80-b3d2-502abb364db0images.png" />
     <Content Include="Areas\Admin\Content\SocialMediaImages\2a830993-f0b7-489f-b9e2-50500b8a59caloading-arrow.png" />
@@ -652,6 +657,7 @@
     <Content Include="Areas\Admin\Content\JS\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\Post\PostList.cshtml" />
     <Content Include="Areas\Admin\Views\Post\UpdatePost.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\ModalMessage.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

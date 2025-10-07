@@ -33,6 +33,13 @@ namespace BLL
 
     }
 
+    public void DeleteAddress(int iD)
+    {
+      dao.DeleteAddress(iD);
+      LogDAO.AddLog(General.ProcessType.AddressDelete, General.TableName.Address, iD);
+
+    }
+
     public List<AddressDTO> GetAddress()
     {
       return dao.GetAds();

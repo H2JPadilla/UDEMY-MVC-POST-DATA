@@ -24,6 +24,24 @@ namespace DAL
       }
     }
 
+    public void DeleteMeta(int iD)
+    {
+      try
+      {
+        TBL_META meta = db.TBL_META.First(x => x.ID == iD);
+        meta.isDeleted = true;
+        meta.DeletedDate = DateTime.Now;  
+        meta.LastUpdateDate = DateTime.Now;
+        meta.LastUpdateUserID = UserStatic.UserID;
+        db.SaveChanges();
+      }
+      catch (Exception ex)
+      {
+
+        throw ex;
+      }
+    }
+
     public List<MetaDTO> GetMetaData()
     {
       List<MetaDTO> dtolist = new List<MetaDTO>();

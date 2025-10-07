@@ -1,9 +1,11 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Metadata.Edm;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI;
 
 namespace DAL
 {
@@ -14,7 +16,7 @@ namespace DAL
     {
       UserDTO dto = new UserDTO();
       TBL_USER user = db.TBL_USER.FirstOrDefault(x => x.Username == model.Username && x.Password == model.Password);
-      if (user != null && user.ID != null)
+      if (user != null && user.ID != 0)
       {
         dto.ID = user.ID;
         dto.Username = user.Username;
@@ -97,6 +99,27 @@ namespace DAL
       {
         throw ex;
       }
+    }
+
+    public string DeleteUser(int iD)
+    {
+      try
+      {
+        TBL_USER user = db.TBL_USER.First(x => x.ID == iD);
+        string imagepath = user.ImagePath;
+        user.isDeleted = true;
+        user.DeletedDate = DateTime.Now;
+        user.LastUpdateDate = DateTime.Now;
+        user.LastUpdateUserID = UserStatic.UserID;
+        db.SaveChanges();
+
+        return imagepath;
+      }
+      catch (Exception ex)
+      {
+
+        throw ex;
+      }      
     }
   }
 }

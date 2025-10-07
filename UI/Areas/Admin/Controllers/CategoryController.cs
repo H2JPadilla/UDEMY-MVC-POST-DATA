@@ -76,5 +76,18 @@ namespace UI.Areas.Admin.Controllers
       }
       return View(model);
     }
+
+    public JsonResult DeleteCategory(int ID)
+    {
+      List<PostImageDTO> postimagelist = bll.DeleteCategory(ID);
+      foreach (var item in postimagelist)
+      {
+        if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/PostImages/" + item.ImagePath)))
+        {
+          System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/PostImages/" + item.ImagePath));
+        }
+      }
+      return Json("");
+    }
   }
 }

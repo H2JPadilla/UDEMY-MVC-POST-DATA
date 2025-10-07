@@ -24,6 +24,25 @@ namespace DAL
       }
     }
 
+    public string DeleteSocialMedia(int iD)
+    {
+      try
+      {
+        TBL_SOCIAL_MEDIA social = db.TBL_SOCIAL_MEDIA.First(x => x.ID == iD);
+        string imagepath = social.ImagePath;
+        social.isDeleted = true;
+        social.DeletedDate = DateTime.Now;
+        social.LastUpdateDate = DateTime.Now;
+        social.LastUpdateUserID = UserStatic.UserID;
+        return imagepath;
+      }
+      catch (Exception ex)
+      {
+
+        throw ex;
+      }
+    }
+
     public List<SocialMediaDTO> GetSocialMedia()
     {
       List<SocialMediaDTO> dtolist = new List<SocialMediaDTO>();

@@ -39,6 +39,21 @@ namespace BLL
       return true;  
     }
 
+    public List<PostImageDTO> DeletePost(int iD)
+    {
+      List<PostImageDTO> imagelist = dao.DeletePost(iD);
+      LogDAO.AddLog(General.ProcessType.PostDelete, General.TableName.Post, iD);
+      return imagelist;
+    }
+
+    public string DeletePostImage(int iD)
+    {
+      string imagepath = dao.DeletePostImage(iD);
+      LogDAO.AddLog(General.ProcessType.ImageDelete, General.TableName.Image, iD);
+
+      return imagepath;
+    }
+
     public PostDTO GetPostByID(int iD)
     {
       PostDTO dto = new PostDTO();

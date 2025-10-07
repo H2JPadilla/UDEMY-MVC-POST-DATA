@@ -24,6 +24,25 @@ namespace DAL
       }
     }
 
+    public string DeleteAds(int iD)
+    {
+      try
+      {
+        TBL_ADS ads = db.TBL_ADS.First(x => x.ID == iD);
+        string imagepath = ads.ImagePath;
+        ads.isDeleted = true;
+        ads.DeletedDate = DateTime.Now; 
+        ads.LastUpdateDate = DateTime.Now;  
+        ads.LastUpdateUserID = UserStatic.UserID;
+        return imagepath;
+      }
+      catch (Exception ex)
+      {
+
+        throw ex;
+      }
+    }
+
     public List<AdsDTO> GetAds()
     {
       List<TBL_ADS> list = db.TBL_ADS.Where(x => x.isDeleted == false || x.isDeleted == null).OrderBy(x => x.AddDate).ToList();

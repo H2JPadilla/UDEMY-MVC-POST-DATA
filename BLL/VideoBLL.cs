@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,6 +25,13 @@ namespace BLL
       int ID = dao.AddVideo(video);
       LogDAO.AddLog(General.ProcessType.VideoAdd, General.TableName.Video, model.ID);
       return true;
+    }
+
+    public void DeleteVideo(int iD)
+    {
+      dao.DeleteVideo(iD);
+      LogDAO.AddLog(General.ProcessType.VideoDelete, General.TableName.Video, iD);
+
     }
 
     public List<VideoDTO> GetVideo()

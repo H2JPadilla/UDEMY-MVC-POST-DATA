@@ -28,6 +28,28 @@ namespace DAL
       return cat.ID;
     }
 
+    public List<TBL_POST> DeleteCategory(int iD)
+    {
+      try
+      {
+        TBL_CATEGORY cat = db.TBL_CATEGORY.First(x => x.ID == iD);
+        cat.isDeleted = true;
+        cat.DeletedDate = DateTime.Now;
+        cat.LastUpdateUserID = UserStatic.UserID;
+        cat.LastUpdateDate = DateTime.Now;
+        db.SaveChanges();
+
+        List<TBL_POST> postlist = db.TBL_POST.Where(x => x.isDeleted == false || x.isDeleted == null).Where(x => x.CategoryID == iD).ToList();
+        return postlist;
+      }
+      catch (Exception ex)
+      {
+
+        throw ex;
+      }
+
+    }
+
     public List<CategoryDTO> GetCategory()
     {
       List<CategoryDTO> categorylist = new List<CategoryDTO>();

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace DAL
 {
@@ -36,6 +37,43 @@ namespace DAL
       db.TBL_POST_TAG.Add(item);
       db.SaveChanges();
       return item.ID;
+    }
+
+    public List<PostImageDTO> DeletePost(int iD)
+    {
+      TBL_POST post = db.TBL_POST.First(x => x.ID == iD);
+      post.isDeleted = true;
+      post.DeletedDate = DateTime.Now;
+      post.LastUpdateDate = DateTime.Now;
+      post.LastUpdateUserID = UserStatic.UserID;
+      db.SaveChanges();
+
+      List<TBL_POST_IMAGE> imagelist = db.TBL_POST_IMAGE.Where(x => x.PostID == iD).ToList();
+      List<PostImageDTO> dtolist = new List<PostImageDTO>();
+      foreach (var item in imagelist)
+      {
+        PostImageDTO dto = new PostImageDTO();
+        dto.ImagePath = item.ImagePath;
+        item.isDeleted = true;
+        item.DeletedDate = DateTime.Now;
+        item.LastUpdateDate = DateTime.Now;
+        item.LastUpdateUserID = UserStatic.UserID;
+        dtolist.Add(dto);
+      }
+      db.SaveChanges();
+      return dtolist;
+    }
+
+    public string DeletePostImage(int iD)
+    {
+      TBL_POST_IMAGE image = db.TBL_POST_IMAGE.First(x => x.ID == iD);
+      string imagepath = image.ImagePath;
+      image.isDeleted = true;
+      image.DeletedDate = DateTime.Now;
+      image.LastUpdateDate = DateTime.Now;  
+      image.LastUpdateUserID = UserStatic.UserID;
+      db.SaveChanges();
+      return imagepath;
     }
 
     public void DeleteTags(int PostID)

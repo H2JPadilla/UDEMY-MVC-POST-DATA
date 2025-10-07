@@ -33,7 +33,6 @@
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
-        @Html.ValidationMessageFor(x => x.Username)
         <form method="post">
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Username" name="Username">
@@ -43,7 +42,8 @@
               </div>
             </div>
           </div>
-          @Html.ValidationMessageFor(x => x.Password)
+          @Html.ValidationMessageFor(x => x.Username)
+
           <div class="input-group mb-3">
             <input type="password" class="form-control" placeholder="Password" name="Password">
             <div class="input-group-append">
@@ -52,7 +52,7 @@
               </div>
             </div>
           </div>
-
+          @Html.ValidationMessageFor(x => x.Password)
           <div class="row">
 
             <!-- /.col -->

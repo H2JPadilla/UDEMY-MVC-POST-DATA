@@ -24,6 +24,25 @@ namespace DAL
       }
     }
 
+    public void DeleteAddress(int iD)
+    {
+      try
+      {
+        TBL_ADDRESS address = db.TBL_ADDRESS.First(x => x.ID == iD);
+        address.isDeleted = true;
+        address.DeletedDate = DateTime.Now;
+        address.LastUpdateDate = DateTime.Now;
+        address.LastUpdateUserID = UserStatic.UserID;
+        db.SaveChanges();
+      }
+      catch (Exception ex)
+      {
+
+        throw ex;
+      }
+    
+    }
+
     public AddressDTO GetAddressID(int iD)
     {
       TBL_ADDRESS meta = db.TBL_ADDRESS.First(x => x.ID == iD);

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Services.Description;
@@ -150,7 +151,30 @@ namespace UI.Areas.Admin.Controllers
       model.Categories = selectlist;
       model.isUpdate = true;
       return View(model);
+    }
 
+    public JsonResult DeletePostImage(int ID)
+    {
+      string imagepath = bll.DeletePostImage(ID);
+    
+        if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/PostImages/" + imagepath)))
+        {
+          System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/PostImages/" + imagepath));
+        }
+      return Json("");
+    }
+
+    public JsonResult DeletePost(int ID)
+    {
+      List<PostImageDTO> imagelist = bll.DeletePost(ID);  
+      foreach (var item in imagelist)
+      {
+        if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/PostImages/" + item.ImagePath)))
+        {
+          System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/PostImages/" + item.ImagePath));
+        }
+      }
+      return Json("");
     }
   }
 

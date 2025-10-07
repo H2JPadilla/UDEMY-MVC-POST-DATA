@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,12 @@ namespace BLL
       LogDAO.AddLog(General.ProcessType.MetaAdd, General.TableName.Meta, MetaID);
       return true;
 
+    }
+
+    public void DeleteMeta(int iD)
+    {
+      dao.DeleteMeta(iD);
+      LogDAO.AddLog(General.ProcessType.MetaDelete, General.TableName.Meta, iD);
     }
 
     public List<MetaDTO> GetMetaData()

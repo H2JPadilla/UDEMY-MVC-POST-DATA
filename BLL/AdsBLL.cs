@@ -26,6 +26,13 @@ namespace BLL
       return true;
     }
 
+    public string DeleteAds(int iD)
+    {
+      string imagepath = dao.DeleteAds(iD);
+      return imagepath;
+
+    }
+
     public List<AdsDTO> GetAds()
     {
       return dao.GetAds();

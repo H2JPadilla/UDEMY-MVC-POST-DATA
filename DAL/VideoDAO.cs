@@ -24,6 +24,23 @@ namespace DAL
 
     }
 
+    public void DeleteVideo(int iD)
+    {
+      try
+      {
+        TBL_VIDEO video = db.TBL_VIDEO.First(x => x.ID == iD);
+        video.isDeleted = true;
+        video.DeletedDate = DateTime.Now;
+        video.LastUpdateDate = DateTime.Now;
+        video.LastUpdateUserID = UserStatic.UserID;
+      }
+      catch (Exception ex)
+      {
+
+        throw ex;
+      }
+    }
+
     public List<VideoDTO> GetVideo()
     {
       List<TBL_VIDEO> list = db.TBL_VIDEO.Where(x => x.isDeleted == false || x.isDeleted == null).OrderByDescending(x => x.AddDate).ToList();
