@@ -661,6 +661,7 @@
     <Content Include="Areas\Admin\Views\Post\UpdatePost.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\ModalMessage.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\HomeLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
