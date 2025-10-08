@@ -13,7 +13,7 @@ using System.Web.WebPages.Instrumentation;
 
 namespace UI.Areas.Admin.Controllers
 {
-    public class PostController : Controller
+    public class PostController : BaseController
     {
     public readonly PostBLL bll = new PostBLL();
     public ActionResult Index()

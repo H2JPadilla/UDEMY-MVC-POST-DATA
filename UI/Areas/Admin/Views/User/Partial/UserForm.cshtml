@@ -15,10 +15,14 @@
     @Html.ValidationMessageFor(x => x.Password)
   </div>
 
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" name="isAdmin" checked="@Model.isAdmin" value="true">
-    <label class="form-check-label">is Admin?</label>
-  </div>
+  @if (DTO.UserStatic.isAdmin)
+  {
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" name="isAdmin" checked="@Model.isAdmin" value="true">
+      <label class="form-check-label">is Admin?</label>
+    </div>
+  }
+
 
   <br />
 

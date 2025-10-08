@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace UI.Areas.Admin.Controllers
 {
-  public class CategoryController : Controller
+  public class CategoryController : BaseController
   {
     public readonly CategoryBLL bll = new CategoryBLL();
 

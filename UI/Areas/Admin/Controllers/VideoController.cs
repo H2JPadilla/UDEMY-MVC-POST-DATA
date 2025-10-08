@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace UI.Areas.Admin.Controllers
 {
-  public class VideoController : Controller
+  public class VideoController : BaseController
 
   {
     public readonly VideoBLL bll = new VideoBLL();

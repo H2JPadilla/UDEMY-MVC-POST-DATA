@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace UI.Areas.Admin.Controllers
 {
-  public class UserController : Controller
+  public class UserController : BaseController
   {
     public readonly UserBLL bll = new UserBLL();
     public ActionResult UserList()

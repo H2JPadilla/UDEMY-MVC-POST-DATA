@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace UI.Areas.Admin.Controllers
 {
-  public class MetaController : Controller
+  public class MetaController : BaseController
   {
     public readonly DTO.MetaDTO dto = new DTO.MetaDTO();
     public readonly BLL.MetaBLL bll = new BLL.MetaBLL();
