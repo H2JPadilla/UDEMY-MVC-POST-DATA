@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,14 @@ namespace UI.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return RedirectToAction("Index", "Login", new { area = "Admin" });
-        }
+    LayoutBLL bll = new LayoutBLL();
+    public ActionResult Index()
+    {
+      HomeLayoutDTO dto = new HomeLayoutDTO();
+      dto = bll.GetLayoutData();
+      ViewData["LayoutDTO"] = dto;
+      return View();
+
     }
+  }
 }

@@ -6,7 +6,7 @@
     @Html.ValidationMessageFor(x => x.Title)
   </div>
 
-  <input type="number" value="@Model.ID" name="ID" />
+  <input hidden type="number" value="@Model.ID" name="ID" />
 
   <div class="form-group">
     @Html.LabelFor(x => x.LogoImage)
