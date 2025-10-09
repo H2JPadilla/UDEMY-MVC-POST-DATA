@@ -1,74 +1,87 @@
-﻿﻿
-@{
-  ViewBag.Title = "AdsList";
-  Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+﻿@{
+    ViewBag.Title = "AdsList";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
 
-
-
 @model List<DTO.AdsDTO>
-<section class="content-header">
-  <h1>Ads List</h1>
-  <ol class="breadcrumb float-sm-left">
-    <li class="breadcrumb-item"><a>Admin</a></li>
-    <li class="breadcrumb-item"><a>Ads</a></li>
-    <li class="breadcrumb-item active"><a>Ads List</a></li>
-  </ol>
+
+<!-- Page Header -->
+<section class="content-header mb-3">
+    <h2 class="fw-bold text-dark">Ads List</h2>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+        <li class="breadcrumb-item"><a href="#">Ads</a></li>
+        <li class="breadcrumb-item active">Ads List</li>
+    </ol>
 </section>
-<br />
-<div class="card-footer">
-  <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Ads/AddAds'">Add Ads</button>
+
+<!-- Add Ads Button -->
+<div class="card-footer border-0 bg-transparent mb-3">
+    <button type="button" class="btn btn-dark px-4" onclick="window.location.href='/Admin/Ads/AddAds'">
+        <i class="ion-plus-round me-2"></i> Add Ads
+    </button>
 </div>
 
-<div class="card">
-  <div class="card-header">
-    <h3 class="card-title">DataTable with default features</h3>
-  </div>
-  <!-- /.card-header -->
-  <div class="card-body">
-    <table id="example1" class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Link</th>
-          <th>Image</th>
-          <th>Update</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
+<!-- Ads List Card -->
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white">
+        <h5 class="card-title mb-0 text-dark">
+            <i class="ion-speakerphone me-2 mr-2"></i>Advertisement Management
+        </h5>
+    </div>
 
-        @foreach (var item in Model)
-        {
-          <tr id="a_@item.ID">
-            <td>@item.Name</td>
-            <td>@item.Link</td>
-            <td>
-              <img src="~/Areas/Admin/Content/AdsImages/@item.ImagePath" width="60" height="40" />
-            </td>
+    <div class="card-body">
+        <table id="example1" class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Link</th>
+                    <th>Image</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="a_@item.ID">
+                        <td class="fw-semibold">@item.Name</td>
+                        <td>
+                            <a href="@item.Link" target="_blank" class="text-decoration-none text-primary">
+                                @item.Link
+                            </a>
+                        </td>
+                        <td>
+                            <img src="~/Areas/Admin/Content/AdsImages/@item.ImagePath"
+                                 class="rounded shadow-sm"
+                                 style="width:60px; height:40px; object-fit:cover;" />
+                        </td>
 
-            @* UPDATE *@
-            <td align="center" valign="middle">
-              <a href="/Admin/Ads/UpdateAds/@item.ID">
-                <br />
-                <img src="~/Areas/Admin/Content/icons/loading-arrow.png" style="height:40px;" />
-              </a>
-            </td>
+                        <!-- UPDATE -->
+                        <td class="text-center">
+                            <a href="/Admin/Ads/UpdateAds/@item.ID"
+                               class="text-decoration-none text-primary d-inline-flex align-items-center justify-content-center gap-2">
+                                <i class="ion-edit"></i>
+                                <span class="ml-2">Edit</span>
+                            </a>
+                        </td>
 
+                        <!-- DELETE -->
+                        <td class="text-center">
+                            <a href="#"
+                               class="text-decoration-none text-danger d-inline-flex align-items-center justify-content-center gap-2"
+                               onclick="AskQuestion('/Admin/Ads/DeleteAds/', @item.ID)">
+                                <i class="ion-trash-b"></i>
+                                <span class="ml-2">Delete</span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
-            <td align="center" valign="middle">
-              <a href="#">
-                <br />
-                <img src="~/Areas/Admin/Content/icons/delete.png" style="height:40px;" onclick="AskQuestion('/Admin/Ads/DeleteAds/', @item.ID)" />
-              </a>
-            </td>
-          </tr>
-        }
-      </tbody>
-
-    </table>
-  </div>
-  @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
 </div>
 
 <script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>

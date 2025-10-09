@@ -1,0 +1,16 @@
+﻿.table td, .table th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+a.text-primary:hover i {
+    color: #0d6efd;
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+a.text-danger:hover i {
+    color: #dc3545;
+    transform: scale(1.1);
+    transition: 0.2s;
+}

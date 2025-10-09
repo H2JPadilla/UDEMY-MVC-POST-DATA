@@ -1,65 +1,77 @@
-﻿﻿
-@{
-  ViewBag.Title = "MetaList";
-  Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+﻿@{
+    ViewBag.Title = "MetaList";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
 
-
 @model List<DTO.MetaDTO>
-<section class="content-header">
-  <h1>Meta List</h1>
-  <ol class="breadcrumb float-sm-left">
-    <li class="breadcrumb-item"><a>Admin</a></li>
-    <li class="breadcrumb-item"><a>Meta</a></li>
-    <li class="breadcrumb-item active"><a>Meta List</a></li>
-  </ol>
+
+<!-- Page Header -->
+<section class="content-header mb-3">
+    <h2 class="fw-bold text-dark">Meta List</h2>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+        <li class="breadcrumb-item"><a href="#">Meta</a></li>
+        <li class="breadcrumb-item active">Meta List</li>
+    </ol>
 </section>
-<br />
-<div class="card-footer">
-  <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Meta/AddMeta'">Add Meta</button>
+
+<!-- Add Meta Button -->
+<div class="card-footer border-0 bg-transparent mb-3">
+    <button type="button" class="btn btn-dark px-4" onclick="window.location.href='/Admin/Meta/AddMeta'">
+        <i class="ion-ios-pricetag-outline me-2"></i> Add Meta
+    </button>
 </div>
 
-<div class="card">
-  <div class="card-header">
-    <h3 class="card-title">DataTable with default features</h3>
-  </div>
-  <!-- /.card-header -->
-  <div class="card-body">
-    <table id="example1" class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Meta Content</th>
-          <th>Update</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
+<!-- Meta Table -->
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white">
+        <h5 class="card-title mb-0 text-dark">
+            <i class="ion-ios-pricetag me-2 mr-2"></i> Meta Management
+        </h5>
+    </div>
 
-        @foreach (var item in Model)
-        {
-          <tr id="a_@item.MetaID">
-            <td>@item.Name</td>
-            <td>@item.MetaContent</td>
-            <td align="center" valign="middle">
+    <div class="card-body">
+        <table id="example1" class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Meta Content</th>
+                    <th class="text-center">Update</th>
+                    <th class="text-center">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="a_@item.MetaID">
+                        <td class="fw-semibold">@item.Name</td>
+                        <td>@item.MetaContent</td>
 
-              @* UPDATE *@
-              <a href="/Admin/Meta/UpdateMeta/@item.MetaID">
-                <br />
-                <img src="~/Areas/Admin/Content/icons/loading-arrow.png" style="height:40px;" />
-              </a>
-            </td>
-            <td align="center" valign="middle">
-              <a href="#">
-                <br />
-                <img src="~/Areas/Admin/Content/icons/delete.png" style="height:40px;" onclick="AskQuestion('/Admin/Meta/DeleteMeta/',@item.MetaID)" />
-              </a>
-            </td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  </div>
-  @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
+                        <!-- UPDATE -->
+                        <td class="text-center">
+                            <a href="/Admin/Meta/UpdateMeta/@item.MetaID"
+                               class="text-decoration-none text-primary d-inline-flex align-items-center justify-content-center gap-2">
+                                <i class="ion-edit"></i>
+                                <span class="ml-2">Edit</span>
+                            </a>
+                        </td>
+
+                        <!-- DELETE -->
+                        <td class="text-center">
+                            <a href="#"
+                               class="text-decoration-none text-danger d-inline-flex align-items-center justify-content-center gap-2"
+                               onclick="AskQuestion('/Admin/Meta/DeleteMeta/', @item.MetaID)">
+                                <i class="ion-trash-b"></i>
+                                <span class="ml-2">Delete</span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
 </div>
+
 <script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>

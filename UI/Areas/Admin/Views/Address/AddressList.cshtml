@@ -1,73 +1,77 @@
-﻿
-@{
-  ViewBag.Title = "AddressList";
-  Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+﻿@{
+    ViewBag.Title = "AddressList";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
 
-
 @model List<DTO.AddressDTO>
-<section class="content-header">
-  <h1>Address List</h1>
-  <ol class="breadcrumb float-sm-left">
-    <li class="breadcrumb-item"><a>Admin</a></li>
-    <li class="breadcrumb-item"><a>Address</a></li>
-    <li class="breadcrumb-item active"><a>Address List</a></li>
-  </ol>
+
+<!-- Page Header -->
+<section class="content-header mb-3">
+    <h2 class="fw-bold text-dark">Address List</h2>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+        <li class="breadcrumb-item"><a href="#">Address</a></li>
+        <li class="breadcrumb-item active">Address List</li>
+    </ol>
 </section>
-<br />
-<div class="card-footer">
-  <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Address/AddAddress'">Add Address</button>
+
+<!-- Add Address Button -->
+<div class="card-footer border-0 bg-transparent mb-3">
+    <button type="button" class="btn btn-dark px-4" onclick="window.location.href='/Admin/Address/AddAddress'">
+        <i class="ion-ios-location-outline me-2"></i> Add Address
+    </button>
 </div>
 
-<div class="card">
-  <div class="card-header">
-    <h3 class="card-title">DataTable with default features</h3>
-  </div>
-  <!-- /.card-header -->
-  <div class="card-body">
-    <table id="example1" class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Address</th>
-          <th>Phone1</th>
-          <th>Update</th>
-          <th>Delete</th>
+<!-- Address Table -->
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white">
+        <h5 class="card-title mb-0 text-dark">
+            <i class="ion-ios-location me-2 mr-2"></i>Address Management
+        </h5>
+    </div>
 
-        </tr>
-      </thead>
-      <tbody>
+    <div class="card-body">
+        <table id="example1" class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th class="text-center">Update</th>
+                    <th class="text-center">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="a_@item.ID">
+                        <td class="fw-semibold">@item.AddressContent</td>
+                        <td>@item.Phone1</td>
 
-        @foreach (var item in Model)
-        {
-          <tr id="a_@item.ID">
-            <td>@item.AddressContent</td>
-            <td>@item.Phone1</td>
+                        <!-- UPDATE -->
+                        <td class="text-center">
+                            <a href="/Admin/Address/UpdateAddress/@item.ID"
+                               class="text-decoration-none text-primary d-inline-flex align-items-center justify-content-center gap-2">
+                                <i class="ion-edit"></i>
+                                <span class="ml-2">Edit</span>
+                            </a>
+                        </td>
 
+                        <!-- DELETE -->
+                        <td class="text-center">
+                            <a href="#"
+                               class="text-decoration-none text-danger d-inline-flex align-items-center justify-content-center gap-2"
+                               onclick="AskQuestion('/Admin/Address/DeleteAddress/', @item.ID)">
+                                <i class="ion-trash-b"></i>
+                                <span class="ml-2">Delete</span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
-
-            @* UPDATE *@
-            <td align="center" valign="middle">
-              <a href="/Admin/Address/UpdateAddress/@item.ID">
-                <br />
-                <img src="~/Areas/Admin/Content/icons/loading-arrow.png" style="height:40px;" />
-              </a>
-            </td>
-
-
-            <td align="center" valign="middle">
-              <a href="#">
-                <br />
-                <img src="~/Areas/Admin/Content/icons/delete.png" style="height:40px;" onclick="AskQuestion('/Admin/Address/DeleteAddress/', @item.ID)" />
-              </a>
-            </td>
-          </tr>
-        }
-      </tbody>
-
-    </table>
-  </div>
-  @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
 </div>
+
 <script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>
-
-

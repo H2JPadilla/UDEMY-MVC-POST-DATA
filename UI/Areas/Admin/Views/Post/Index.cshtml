@@ -1,7 +1,103 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Dashboard";
     Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+@using DTO;
 
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h2 class="m-0 fw-bold" style="color:#2c3e50;">Welcome back, @UserStatic.NameSurname</h2>
+                <p class="text-muted">Here’s an overview of your system today.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Dashboard Stats -->
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-light shadow-sm border rounded">
+                    <div class="inner">
+                        <h3 class="fw-bold" style="color:#2c3e50;">0</h3>
+                        <p class="text-secondary mb-0">Total Posts</p>
+                    </div>
+                    <div class="icon" style="color:#2c3e50; font-size: 2.2rem;">
+                        <i class="bi bi-newspaper"></i>
+                    </div>
+                    <a href="/Admin/Post/PostList" class="small-box-footer text-decoration-none" style="color:#2c3e50;">
+                        View All <i class="bi bi-arrow-right-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-light shadow-sm border rounded">
+                    <div class="inner">
+                        <h3 class="fw-bold" style="color:#2c3e50;">0</h3>
+                        <p class="text-secondary mb-0">Active Categories</p>
+                    </div>
+                    <div class="icon" style="color:#34495e; font-size: 2.2rem;">
+                        <i class="bi bi-list-task"></i>
+                    </div>
+                    <a href="/Admin/Category/CategoryList" class="small-box-footer text-decoration-none" style="color:#2c3e50;">
+                        Manage <i class="bi bi-arrow-right-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-light shadow-sm border rounded">
+                    <div class="inner">
+                        <h3 class="fw-bold" style="color:#2c3e50;">0</h3>
+                        <p class="text-secondary mb-0">Videos Uploaded</p>
+                    </div>
+                    <div class="icon" style="color:#2c3e50; font-size: 2.2rem;">
+                        <i class="bi bi-camera-video"></i>
+                    </div>
+                    <a href="/Admin/Video/VideoList" class="small-box-footer text-decoration-none" style="color:#2c3e50;">
+                        View Videos <i class="bi bi-arrow-right-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-light shadow-sm border rounded">
+                    <div class="inner">
+                        <h3 class="fw-bold" style="color:#2c3e50;">0</h3>
+                        <p class="text-secondary mb-0">Pending Ads</p>
+                    </div>
+                    <div class="icon" style="color:#2c3e50;">
+                        <i class="bi bi-badge-ad"></i>
+                    </div>
+                    <a href="/Admin/Ads/AdsList" class="small-box-footer text-decoration-none" style="color:#2c3e50;">
+                        Check Ads <i class="bi bi-arrow-right-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity or Info -->
+        <div class="card shadow-sm border-0 mt-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0" style="color:#2c3e50;">
+                    <i class="bi bi-clock-history me-2 mr-2" style="color:#2c3e50;"></i>Recent Activity
+                </h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><i class="bi bi-check-circle text-success mr-2"></i> Added new post: <strong>"System Maintenance Update"</strong></li>
+                    <li class="mb-2"><i class="bi bi-person-gear text-secondary mr-2"></i> Profile updated successfully</li>
+                    <li><i class="bi bi-badge-ad text-warning mr-2"></i> New advertisement submitted for review</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

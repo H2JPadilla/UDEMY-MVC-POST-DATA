@@ -95,7 +95,10 @@
     <Content Include="Areas\Admin\Content\CSS\bootstrap-4.min.css" />
     <Content Include="Areas\Admin\Content\CSS\dataTables.bootstrap4.min.css" />
     <Content Include="Areas\Admin\Content\CSS\icheck-bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\CSS\layout.css" />
+    <Content Include="Areas\Admin\Content\CSS\mdb.min.css" />
     <Content Include="Areas\Admin\Content\CSS\responsive.bootstrap4.min.css" />
+    <Content Include="Areas\Admin\Content\CSS\table.css" />
     <Content Include="Areas\Admin\Content\CSS\toastr.min.css" />
     <Content Include="Areas\Admin\Content\FavImages\0e52675b-4dbe-4ea8-b9c5-c3f5ef3a33fananami.jpg" />
     <Content Include="Areas\Admin\Content\FavImages\177c15e5-03cc-405a-8c2a-d2c0c3f3480dimages.png" />
@@ -530,6 +533,7 @@
     <Content Include="Areas\Admin\Content\JS\demo.js" />
     <Content Include="Areas\Admin\Content\JS\jquery.dataTables.min.js" />
     <Content Include="Areas\Admin\Content\JS\jquery.min.js" />
+    <Content Include="Areas\Admin\Content\JS\mdb.umd.min.js" />
     <Content Include="Areas\Admin\Content\JS\responsive.bootstrap4.min.js" />
     <Content Include="Areas\Admin\Content\JS\sweetalert2.min.js" />
     <Content Include="Areas\Admin\Content\JS\toastr.min.js" />
@@ -563,12 +567,14 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\FavController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LogoutController.cs" />
     <Compile Include="Areas\Admin\Controllers\MetaController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Areas\Admin\Controllers\SocialMediaController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Controllers\VideoController.cs" />
     <Compile Include="Areas\Admin\Models\Attributes\LoginControl.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -673,8 +679,9 @@
     <Folder Include="Areas\Admin\Content\PostImages\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Areas\Admin\Views\Logout\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

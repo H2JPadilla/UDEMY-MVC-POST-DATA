@@ -1,71 +1,78 @@
-﻿﻿
-@{
-  ViewBag.Title = "VideoList";
-  Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+﻿@{
+    ViewBag.Title = "VideoList";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
 
-
 @model List<DTO.VideoDTO>
-<section class="content-header">
-  <h1>Video List</h1>
-  <ol class="breadcrumb float-sm-left">
-    <li class="breadcrumb-item"><a>Admin</a></li>
-    <li class="breadcrumb-item"><a>Video</a></li>
-    <li class="breadcrumb-item active"><a>Video List</a></li>
-  </ol>
+
+<!-- Page Header -->
+<section class="content-header mb-3">
+    <h2 class="fw-bold" style="color:#2c3e50;">Video List</h2>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+        <li class="breadcrumb-item"><a href="#">Video</a></li>
+        <li class="breadcrumb-item active">Video List</li>
+    </ol>
 </section>
-<br />
-<div class="card-footer">
-  <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Video/AddVideo'">Add Video</button>
+
+<!-- Add Video Button -->
+<div class="card-footer border-0 bg-transparent mb-3">
+    <button type="button" class="btn btn-dark px-4" onclick="window.location.href='/Admin/Video/AddVideo'">
+        <i class="ion-ios-videocam me-2"></i> Add Video
+    </button>
 </div>
 
-<div class="card">
-  <div class="card-header">
-    <h3 class="card-title">DataTable with default features</h3>
-  </div>
-  <!-- /.card-header -->
-  <div class="card-body">
-    <table id="example1" class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Path</th>
-          <th>Update</th>
-          <th>Delete</th>
+<!-- Video Table Card -->
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white">
+        <h5 class="card-title mb-0" style="color:#2c3e50;">
+            <i class="ion-social-youtube-outline me-2 mr-2""></i>Video Management
+        </h5>
+    </div>
 
-        </tr>
-      </thead>
-      <tbody>
+    <div class="card-body">
+        <table id="example1" class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th style="width:35%;">Title</th>
+                    <th style="width:35%;">Path</th>
+                    <th style="width:15%;">Update</th>
+                    <th style="width:15%;">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="a_@item.ID">
+                        <td class="fw-semibold">@item.Title</td>
+                        <td>@item.OriginalVideoPath</td>
 
-        @foreach (var item in Model)
-        {
-          <tr id="a_@item.ID">
-            <td>@item.Title</td>
-            <td>@item.OriginalVideoPath</td>
+                        <!-- UPDATE -->
+                        <td class="text-center">
+                            <a href="/Admin/Video/UpdateVideo/@item.ID"
+                               class="text-decoration-none text-primary d-inline-flex align-items-center justify-content-center gap-2">
+                                <i class="ion-edit" style="font-size:1.2rem;"></i>
+                                <span class="ml-2">Edit</span>
+                            </a>
+                        </td>
 
+                        <!-- DELETE -->
+                        <td class="text-center">
+                            <a href="#"
+                               class="text-decoration-none text-danger d-inline-flex align-items-center justify-content-center gap-2"
+                               onclick="AskQuestion('/Admin/Video/DeleteVideo/', @item.ID)">
+                                <i class="ion-trash-b" style="font-size:1.2rem;"></i>
+                                <span class="ml-2">Delete</span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
-
-            @* UPDATE *@
-            <td align="center" valign="middle">
-              <a href="/Admin/Video/UpdateVideo/@item.ID">
-                <br />
-                <img src="~/Areas/Admin/Content/icons/loading-arrow.png" style="height:40px;" />
-              </a>
-            </td>
-
-
-            <td align="center" valign="middle">
-              <a href="#">
-                <br />
-                <img src="~/Areas/Admin/Content/icons/delete.png" style="height:40px;" onclick="AskQuestion('/Admin/Video/DeleteVideo/', @item.ID)" />
-              </a>
-            </td>
-          </tr>
-        }
-      </tbody>
-
-    </table>
-  </div>
-  @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml") 
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
 </div>
+
 <script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>
+

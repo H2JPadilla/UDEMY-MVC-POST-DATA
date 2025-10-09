@@ -25,7 +25,6 @@ namespace DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<TBL_ADDRESS> TBL_ADDRESS { get; set; }
         public DbSet<TBL_ADS> TBL_ADS { get; set; }
         public DbSet<TBL_CATEGORY> TBL_CATEGORY { get; set; }
